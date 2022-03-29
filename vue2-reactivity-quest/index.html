@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Hello Vue2 Reactivity Quest</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div>--- 请阅读脚本 ---</div>
+    <script type="module">
+      import { observe } from "./js/observe.js";
+
+      const person = {
+        name: "gogoend",
+        age: 18,
+        hobbies: ["photograph", "ride"],
+        gender: "male",
+        orders: [
+          {
+            date: "2022-03-29 18:20",
+            skus: [
+              {
+                id: "1",
+                name: "苏打水",
+                price: 2500
+              },
+              {
+                id: "2",
+                name: "米粉",
+                price: 4500
+              }
+            ]
+          },
+          {
+            date: "2022-03-28 17:20",
+            skus: [
+              {
+                id: "3",
+                name: "白砂糖",
+                price: 6500
+              },
+              {
+                id: "1",
+                name: "苏打水",
+                price: 2500
+              }
+            ]
+          }
+        ],
+        vipInfo: {
+          vipCardId: 1,
+          createdTime: "2020-09-13 08:56"
+        }
+      };
+      window.person = person;
+
+      observe(person);
+    </script>
+  </body>
+</html>
