@@ -17,7 +17,7 @@ export class Dep {
     const subs = this.subs.concat();
     for (var i = 0, l = subs.length; i < l; i++) {
       try {
-        subs[i]();
+        subs[i].update()
       } catch (err) {
         console.err(err);
         break;
