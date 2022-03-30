@@ -16,7 +16,10 @@ export class Watcher {
         this.get()
     }
     get() {
+        window.globalWatcher = this
         this.value = this.getter()
+        // TODO: 此处应当清除暴露在全局的globalWatcher
+        // window.globalWatcher = null
         return this.value
     }
     update () {

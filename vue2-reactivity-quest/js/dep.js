@@ -2,6 +2,9 @@ import { remove } from "./utils.js";
 
 export class Dep {
   static dId = 0
+  static get target () {
+    return window.globalWatcher
+  }
 
   constructor() {
     this.id = Dep.dId++
@@ -22,6 +25,11 @@ export class Dep {
         console.err(err);
         break;
       }
+    }
+  }
+  depend() {
+    if (Dep.target) {
+      Dep.target.addDep(this)
     }
   }
 }

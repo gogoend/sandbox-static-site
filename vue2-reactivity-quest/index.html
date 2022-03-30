@@ -57,10 +57,10 @@
         window.person = person;
 
         observe(person);
-        let watcher = new Watcher(person, () => {
+        new Watcher(person, () => {
           console.log(person.age, person.name)
         })
-        console.log(watcher)
+        console.log(window.globalWatcher)
       })()
     </script>
   </body>

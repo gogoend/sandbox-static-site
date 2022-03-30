@@ -59,8 +59,10 @@ function defineObserve(object, key) {
       dep.notify();
     },
     get() {
-      // TODO: 首次访问该属性时，应该让依赖被收集到
-      // ...
+      // 访问该属性时，让依赖被收集到
+      if (Dep.target) {
+        dep.depend()
+      }
       return value;
     },
     enumerable: true,
