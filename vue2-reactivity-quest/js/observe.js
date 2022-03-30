@@ -53,6 +53,8 @@ function defineObserve(object, key) {
   Object.defineProperty(object, key, {
     set(val) {
       value = val;
+      // 将新值中各个属性转换为响应式属性
+      observe(val)
       // 当属性被更改后，应该通知到该属性的所有依赖
       dep.notify();
     },
