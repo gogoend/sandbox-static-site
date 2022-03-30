@@ -2,13 +2,12 @@
   <head>
     <title>Hello Vue2 Reactivity Quest</title>
     <meta charset="utf-8" />
-    <base href="/vue2-reactivity-quest/">
   </head>
   <body>
     <div>--- 请阅读脚本 ---</div>
     <script type="module">
       import { observe } from "./js/observe.js";
-      import { Watcher } from "./js/watcher.js"
+      import { Watcher } from "./js/watcher.js";
 
       const person = {
         name: "gogoend",
@@ -58,10 +57,10 @@
 
         observe(person);
         new Watcher(person, () => {
-          console.log(person.age, person.name)
-        })
-        console.log(window.globalWatcher)
-      })()
+          console.log(person.age, person.name);
+        });
+        console.log(window.globalWatcher);
+      })();
     </script>
   </body>
 </html>
