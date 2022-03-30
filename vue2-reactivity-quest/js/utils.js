@@ -14,3 +14,7 @@ export function remove(arr, item) {
 export function hasOwn(object, key) {
   return Object.prototype.hasOwnProperty.call(object, key);
 }
+
+export function isFunction (val) {
+  return typeof val === 'function'
+}
